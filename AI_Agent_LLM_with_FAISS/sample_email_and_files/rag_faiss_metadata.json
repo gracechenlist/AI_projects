@@ -1,0 +1,56 @@
+[
+  {
+    "id": "kb-001",
+    "text": "Title: Host communication failure\nProblem: Engine cannot communicate with host or host operation failed.\nRoot cause: Host agent may be down, host may be unreachable, DNS may be wrong, or SSH/service connectivity may be blocked.\nChecks: Ping the host from the engine server. Check DNS resolution for the host FQDN. Check host agent/service status. Check firewall rules between engine and host.\nFix: Restart the host agent/service, fix DNS/network connectivity, then retry the operation from the engine.\nPrevention: Monitor host heartbeat and alert when host management service stops.",
+    "item": {
+      "id": "kb-001",
+      "title": "Host communication failure",
+      "problem": "Engine cannot communicate with host or host operation failed.",
+      "root_cause": "Host agent may be down, host may be unreachable, DNS may be wrong, or SSH/service connectivity may be blocked.",
+      "checks": [
+        "Ping the host from the engine server.",
+        "Check DNS resolution for the host FQDN.",
+        "Check host agent/service status.",
+        "Check firewall rules between engine and host."
+      ],
+      "fix": "Restart the host agent/service, fix DNS/network connectivity, then retry the operation from the engine.",
+      "prevention": "Monitor host heartbeat and alert when host management service stops."
+    }
+  },
+  {
+    "id": "kb-002",
+    "text": "Title: Storage or multipath issue\nProblem: Log mentions faulty multipath, storage path failure, or storage domain access issue.\nRoot cause: One or more SAN/iSCSI/FC paths may be down, storage target may be unreachable, or multipath configuration may be incorrect.\nChecks: Check multipath -ll on the host. Check storage network connectivity. Check storage array/target availability. Review recent storage zoning or network changes.\nFix: Restore failed storage paths, restart multipath if needed, and verify the storage domain is active.\nPrevention: Monitor path count and alert when redundant paths drop below expected count.",
+    "item": {
+      "id": "kb-002",
+      "title": "Storage or multipath issue",
+      "problem": "Log mentions faulty multipath, storage path failure, or storage domain access issue.",
+      "root_cause": "One or more SAN/iSCSI/FC paths may be down, storage target may be unreachable, or multipath configuration may be incorrect.",
+      "checks": [
+        "Check multipath -ll on the host.",
+        "Check storage network connectivity.",
+        "Check storage array/target availability.",
+        "Review recent storage zoning or network changes."
+      ],
+      "fix": "Restore failed storage paths, restart multipath if needed, and verify the storage domain is active.",
+      "prevention": "Monitor path count and alert when redundant paths drop below expected count."
+    }
+  },
+  {
+    "id": "kb-003",
+    "text": "Title: VM provisioning failure\nProblem: VM creation, reimage, or provisioning workflow failed.\nRoot cause: Possible missing template, invalid VM parameters, unavailable host capacity, network profile mismatch, or backend automation error.\nChecks: Validate VM shape, location, and network profile. Check template/image availability. Check host cluster capacity. Review backend automation logs.\nFix: Correct the input parameters or template mapping, then rerun the provisioning workflow.\nPrevention: Add pre-flight validation before provisioning starts.",
+    "item": {
+      "id": "kb-003",
+      "title": "VM provisioning failure",
+      "problem": "VM creation, reimage, or provisioning workflow failed.",
+      "root_cause": "Possible missing template, invalid VM parameters, unavailable host capacity, network profile mismatch, or backend automation error.",
+      "checks": [
+        "Validate VM shape, location, and network profile.",
+        "Check template/image availability.",
+        "Check host cluster capacity.",
+        "Review backend automation logs."
+      ],
+      "fix": "Correct the input parameters or template mapping, then rerun the provisioning workflow.",
+      "prevention": "Add pre-flight validation before provisioning starts."
+    }
+  }
+]
